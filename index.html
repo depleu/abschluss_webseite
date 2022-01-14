@@ -109,7 +109,6 @@
         .author {color: #333;}
 
         .active {
-            background-color: #333;
             color: white;
         }
 
@@ -121,443 +120,437 @@
     </style>
 </head>
 <body>
-    <button id="optionBtn" class="w-16 h-16 bg-[#8D644B] shadow-xl fixed rounded-full bottom-10 right-10 opacity-95 z-40 flex justify-center items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" id="optionIcon" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-        </svg>
-    </button>
-    <div id="optionField" class="hidden flex flex-col justify-center items-center w-full h-screen bg-[#8D644B] fixed top-0 left-0 z-30 opacity-95">
-        <div class="flex flex-col items-center mb-5">
-            <span class="text-3xl font-semibold text-white mb-5">Textgröße</span>
-            <div>
-                <button class="active w-20 h-12 font-bold rounded-l-full">S</button>
-                <button class="bg-white w-20 h-12 font-bold">M</button>
-                <button class="bg-white w-20 h-12 font-bold rounded-r-full">L</button>
-            </div>
-        </div>
-        <div class="flex flex-col items-center">
-            <span class="text-3xl font-semibold text-white mb-5">Farbauswahl</span>
-            <div>
-                <button id="farbig" class="active w-28 h-16 font-bold rounded-l-full">Farbig</button>
-                <button id="grau" class="bg-white w-28 h-16 font-bold rounded-r-full">Grau</button>
-            </div>
-        </div>
-    </div>
-
     <div class="max-w-[1200px] mx-auto">
-    <div class="bg-white sticky top-0 z-20 pb-1">
-    <div><img src="img/Logo_Kloster.png" class="w-24 p-2 text-center mx-auto" alt="Kloster Logo"></div>
-    <nav class="flex justify-center scrollmenu">
-        <a href="#start">Start</a>
-        <a href="#angebot">Angebot</a>
-        <a id="btnAnmeldung" href="#anmeldung">Anmeldung</a>
-        <a href="#preisübersicht">Preisübersicht</a>
-        <a href="#stimmen">Stimmen</a>
-        <a href="#ausflüge">Ausflüge</a>
-        <a href="#kontakt">Kontakt/Impressum</a>  
-        <a href="#datenschutz">Datenschutz</a>
-    </nav>
-    </div>
-        
-    <header id="start" class="flex justify-center items-center my-2">
-        <div class="w-2/ block mx-auto">
-            <h1 class="text-2xl sm:text-5xl font-bold text-[#8D644B]">Durchatmen – <br>entspannen – <br>nachdenken</h1>
-            <span>Seminarhaus <br>Kloster Schwarzenfels</span>
+        <div id="navigation" class="bg-white sticky top-0 z-20 pb-1">
+            <div class="flex items-center justify-between">
+                <img src="img/Logo_Kloster.png" class="w-24 p-2" alt="Kloster Logo">
+                <div class="flex items-center justify-center">
+                    <div class="flex items-center rounded-full border border-[#8D644B] mr-2">
+                            <button id="s-size" class="active w-10 h-8 font-bold rounded-l-full">S</button>
+                            <button id="m-size" class="bg-white w-10 h-8 font-bold">M</button>
+                            <button id="l-size" class="bg-white w-10 h-8 font-bold rounded-r-full">L</button>
+
+                            <!-- <input type="range" min="16" max="24" value="16" oninput="document.documentElement.style.fontSize = this.value + 'px'"> -->
+                    </div>
+                    <div class="flex items-center rounded-full border border-[#8D644B]">
+                            <button id="farbig" class="active w-20 h-8 font-bold rounded-l-full">Farbig</button>
+                            <button id="grau" class="w-20 h-8 font-bold rounded-r-full">Grau</button>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex justify-center scrollmenu">
+                <a href="#start">Start</a>
+                <a href="#angebot">Angebot</a>
+                <a id="btnAnmeldung" href="#anmeldung">Anmeldung</a>
+                <a href="#preisübersicht">Preisübersicht</a>
+                <a href="#stimmen">Stimmen</a>
+                <a href="#ausflüge">Ausflüge</a>
+                <a href="#kontakt">Kontakt/Impressum</a>  
+                <a href="#datenschutz">Datenschutz</a>
+            </nav>
         </div>
-        <img class="w-1/3" src="img/Bildlaufgruppe-1.jpg" alt="Waldweg">
-    </header>
-
-    <div class="bg-[#9F8F84] text-white text-center p-6">
-        <h2 class="font-semibold text-xl">Atemholen in der Pandemie – Wir sind für Sie da!</h2>
-        <br>
-        <p>Das Seminarhaus Kloster Schwarzenfels ist weiter geöffnet. 
-        Achten Sie auf unsere speziellen Bedingungen. 
-        Wir freuen uns auf Sie – gerade jetzt.
-        Bleiben Sie gesund.</p>
-    </div>
-
-    <div class="p-6">
-        <p>Nun ist es so weit: Nach den guten Erfahrungen im Probebetrieb starten wir im Jahr 2022 mit den ersten regelmäßigen Kursen zu Gesundheit, Kreativität und Stille. Unser Motto: „Auszeit-in-Schwarzenfels“. Wer Erholung, Entspannung und Abstand vom Alltag sucht, ist uns herzlich willkommen. Wir hoffen, Sie bald auf dem Klosterareal mit seinem modernen Seminarhaus als Gäste begrüßen zu dürfen – ganz unabhängig davon, welchen Glauben oder welche Weltanschauung Sie haben. Denn Gastfreundschaft ist seit Jahrhunderten ein Merkmal des Klosterlebens. </p>
-    </div>
-
-    <div id="angebot">
-        <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-5 mt-2">Angebote</h2>
-        <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-4">Gesundheit</h3></div>
-        <div class="md:grid md:gap-4 md:grid-cols-[repeat(2,1fr)]">
-        <section>
-            <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_23.jpg);"></div>
-            <div class="p-6">
-                <h4 class="font-bold">Hatha-Yoga</h4>
-                <br>
-                <p>
-                    Keine Vorkenntnisse notwendig, nur Neugierde und Achtsamkeit sind
-                    gefragt. Als Präventionsseminar von einigen Krankenkassen gefördert.
-                    <br><br>
-                    Freitag, 4. Februar bis Sonntag, 6. Februar 2022
-                    Freitag, 3. Juni bis Sonntag, 5. Juni 2022
-                    <br><br>
-                    Kursleiterin: Annegret Schippke, annegret-schippke@yahoo.de
-                    <br><br>
-                    Kursgebühr EUR 85,– Vollpension EUR 120,–
-                </p>
-                <br>
-                <a href="" class="bg-[#8D644B] text-white w-full block text-center p-3 font-semibold">Anmeldung</a>
-            </div>
-        </section>
-        <section>
-            <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_25.jpg);"></div>
-            <div class="p-6">
-                <h4 class="font-bold">Körperarbeit</h4>
-                <br>
-                <p>
-                    Lassen Sie sich ganz entspannt auf verschiedene Techniken wie Feldenkrais und Achtsamkeitsbasierte Stressreduktion (MBSR) ein. 
-                    <br><br>
-                    Freitag, 11. Februar bis Sonntag, 13. Februar 2022
-                    Freitag, 6. Mai bis Sonntag, 8. Mai 2022
-                    <br><br>
-                    Kursleiter: Steffen Nagel, info@kursnagel.de
-                    <br><br>
-                    Kursgebühr EUR 95,–, Vollpension EUR 120,–
-                </p>
-                <br>
-                <a href="" class="bg-[#8D644B] text-white w-full block text-center p-3 font-semibold">Anmeldung</a>
-            </div>
-        </section>
-        </div>
-        <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-4">Kreativität</h3></div>
-        <div class="md:grid md:gap-4 md:grid-cols-[repeat(2,1fr)]">
-        <section>
-            <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_14.jpg);"></div>
-            <div class="p-6">
-                <h4 class="font-bold">Zeichnen und Malen</h4>
-                <br>
-                <p>
-                    Wir halten Eindrücke aus der Umgebung als Zeichnungen oder Aquarelle fest. Ich begleite Sie auf dem Weg ganz individuell. Ob Einsteiger/-innen oder Fortgeschrittene – für jeden ist etwas dabei.
-                    <br><br>
-                    Samstag, 23. April bis Sonntag, 24. April 2022
-                    Samstag, 21. Mai bis Sonntag, 22. Mai 2022
-                    <br><br>
-                    Kursleiterin: Hanne Harch, haha@t-online.de
-                    <br><br>
-                    Kursgebühr inkl. Material EUR 110,–, Vollpension EUR 85,–
-                </p>
-                <br>
-                <a href="" class="bg-[#8D644B] text-white w-full block text-center p-3 font-semibold">Anmeldung</a>
-            </div>
-        </section>
-        <section>
-            <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_12.jpg);"></div>
-            <div class="p-6">
-                <h4 class="font-bold">Arbeiten mit Ton</h4>
-                <br>
-                <p>
-                    Formen Sie den Werkstoff Ton zu einem persönlichen Einzelstück. Erleben Sie, was in Ihren Händen steckt – und erden Sie sich im wahrsten Sinn des Wortes.
-                    <br><br>
-                    Samstag, 5. Februar bis Sonntag, 6. Februar 2022
-                    Samstag 4. Juni bis Sonntag 5. Juni 2022
-                    <br><br>
-                    Kursleiterin: Hiltrud Kleinst, hiltrud.kleinst@gmail.de
-                    <br><br>
-                    Kursgebühr EUR 90,– Materialkosten je nach Bedarf, Vollpension EUR 85,–
-                </p>
-                <br>
-                <a href="" class="bg-[#8D644B] text-white w-full block text-center p-3 font-semibold">Anmeldung</a>
-            </div>
-        </section>
-        </div>
-        <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-4">Stille</h3></div>
-        <section>
-            <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_14.jpg);"></div>
-            <div class="p-6">
-                <h4 class="font-bold">Schweigeseminar</h4>
-                <br>
-                <p>
-                    So können Sie richtig Atem holen: Sie gestalten Ihren Tag im Kloster in Schweigen, das nur zu den Mahlzeiten unterbrochen wird. Unterstützend bieten wir Atem- und Entspannungsübungen an oder laden Sie zur Meditation ein. Wir bieten wahlweise einen oder drei Schweigetag/e an.
-                    <br><br>
-                    Donnerstag, 13. Januar bis Samstag, 15. Januar 2022
-                    Donnerstag, 7. April bis Samstag, 9. April 2022
-                    <br><br>
-                    Gebühr EUR 60,–, Vollpension EUR 120,–
-                </p>
-                <br>
-                <a href="" class="bg-[#8D644B] text-white w-full block text-center p-3 font-semibold">Anmeldung</a>
-            </div>
-        </section>
-    </div>
-    <div id="anmeldung">
-        <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-5 mt-2">Anmeldung</h2>
-        <form action="" class="p-6">
-            <label for="text">Kurs</label>
-            <select id="kurs" name="kurs" class="border w-full h-10 mb-4 mt-2 p-2">
-                <option value="yoga">Hatha-Yoga</option>
-                <option value="körperarbeit">Körperarbeit</option>
-                <option value="zeichnen">Zeichnen und Malen</option>
-                <option value="tonarbeit">Arbeiten mit Ton</option>
-                <option value="schweigeseminar">Schweigeseminar</option>
-            </select>
-
-            <label for="text">Zeitraum</label>
-            <select id="zeitraum" name="zeitraum" class="border w-full h-10 mb-4 mt-2 p-2">
-                <option value="februar">Freitag, 4. Februar 2022 bis Sonntag, 6. Februar 2022</option>
-                <option value="juni">Freitag, 3. Juni 2022 bis Sonntag, 5. Juni 2022</option>
-            </select>
-
-            <span id="formpreis" class="text-center font-bold text-[#8D644B] block mb-5">Zum Preis von EUR 205,– <br>(d. h. Kursgebühr EUR 85,–, Vollpension EUR 120,–)</span>
-            <span class="block text-center">Ich buche dieses Seminar:</span>
-
-            <label for="vorname">Vorname*</label>
-            <input id="vorname" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
-
-            <label for="nachname">Nachname*</label>
-            <input id="nachname" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
-
-            <div class="flex">
-                <div class="w-2/3 mr-4">
-                    <label for="straße">Straße*</label>
-                    <input id="straße" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
-                </div>
-
-                <div class="w-1/3">
-                    <label for="hausnr">Hausnr.*</label>
-                    <input id="hausnr" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
-                </div>
-            </div>
-
-            <div class="flex">
-                <div class="w-1/3 mr-4">
-                    <label for="plz">PLZ*</label>
-                    <input id="plz" type="number" required class="border w-full h-10 mb-4 mt-2 p-2">
-                </div>
-
-                <div class="w-2/3">
-                    <label for="ort">Ort*</label>
-                    <input id="ort" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
-                </div>
-            </div>
-
-            <label for="email">Email*</label>
-            <input id="email" type="email" required class="border w-full h-10 mb-4 mt-2 p-2">
-
-            <label for="tel">Telefon</label>
-            <input id="tel" type="tel" class="border w-full h-10 mb-4 mt-2 p-2">
             
-            <div class="flex">
-                <input id="agb" type="checkbox" required class="border w-6 h-6 mb-4 mt-2 mr-2 p-2">
-                <label for="agb" class="pt-2">Ich bin mit den AGB einverstanden.*</label>
+        <header id="start" class="flex justify-center items-center my-2">
+            <div class="w-2/ block mx-auto">
+                <h1 class="text-2xl sm:text-5xl font-bold text-[#8D644B]">Durchatmen – <br>entspannen – <br>nachdenken</h1>
+                <span>Seminarhaus <br>Kloster Schwarzenfels</span>
             </div>
-            <div class="flex">
-                <input id="dsgvo" type="checkbox" required class="border w-6 h-6 mb-4 mt-2 mr-2 p-2">
-                <label for="dsgvo" class="pt-2">Einwilligung zur Datenverarbeitung gemäß DSGVO*</label>
-            </div>
-            <div class="flex">
-                <input id="newsletter" type="checkbox" class="border w-6 h-6 mb-4 mt-2 mr-2 p-2">
-                <label for="newsletter" class="pt-2">Ich melde mich zum Newsletter an.</label>
-            </div>
+            <img class="w-1/3" src="img/Bildlaufgruppe-1.jpg" alt="Waldweg">
+        </header>
 
-            <button id="formBtn" class="bg-[#8D644B] text-white w-full block text-center p-3 font-semibold mt-4">Abschicken</button>
-            <span class="pt-2 block">(*Pflichtfelder)</span>
-        </form>
-    </div>
-    <div id="preisübersicht">
-        <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-2 mt-2">Programm- und Preisübersicht</h2>
-        <h3 class="text-l text-center font-bold text-[#8D644B]">1. Halbjahr 2022</h3>
-
-        <div class="flex overflow-auto whitespace-nowrap mt-3 min-w-full">
-            <table class="min-w-full">
-                <tr>
-                    <td>Kursname</td>
-                    <td>Dozent-/in</td>
-                    <td>Datum</td>
-                    <td>Kursgebühr</td>
-                    <td>Vollpension</td>
-                </tr>
-                    <tr>
-                        <td>Hatha-Yoga</td>
-                        <td>Annegret Schippke</td>
-                        <td>4.–6.2.22</td>
-                        <td>EUR 85,–</td>
-                        <td>EUR 120,–</td>
-                    </tr>
-                    <tr>
-                        <td>Hatha-Yoga</td>
-                        <td>Annegret Schippke</td>
-                        <td>3.–5.6.22</td>
-                        <td>EUR 85,–</td>
-                        <td>EUR 120,–</td>
-                    </tr>
-                    <tr>
-                        <td>Körperarbeit</td>
-                        <td>Steffen Nagel</td>
-                        <td>11.–13.2.22</td>
-                        <td>EUR 95,–</td>
-                        <td>EUR 120,–</td>
-                    </tr>
-                    <tr>
-                        <td>Körperarbeit</td>
-                        <td>Steffen Nagel</td>
-                        <td>6.–8.5.22.</td>
-                        <td>EUR 95,–</td>
-                        <td>EUR 120,–</td>
-                    </tr>
-                    <tr>
-                        <td>Zeichnen</td>
-                        <td>Hanne Harch</td>
-                        <td>23.–24.4.22</td>
-                        <td>EUR 110,–</td>
-                        <td>EUR 85,–</td>
-                    </tr>
-                    <tr>
-                        <td>Zeichnen</td>
-                        <td>Hanne Harch</td>
-                        <td>21.–22.5.22</td>
-                        <td>EUR 110,–</td>
-                        <td>EUR 85,–</td>
-                    </tr>
-                    <tr>
-                        <td>Töpfern</td>
-                        <td>Hiltrud Kleinst</td>
-                        <td>5.–6.2.22</td>
-                        <td>EUR 90,–</td>
-                        <td>EUR 85,–</td>
-                    </tr>
-                    <tr>
-                        <td>Töpfern</td>
-                        <td>Hiltrud Kleinst</td>
-                        <td>4.–5.6.22</td>
-                        <td>EUR 90,–</td>
-                        <td>EUR 85,–</td>
-                    </tr>
-                    <tr>
-                        <td>Stille</td>
-                        <td></td>
-                        <td>13.–15.1.22</td>
-                        <td>EUR 60,–</td>
-                        <td>EUR 120,–</td>
-                    </tr>
-                    <tr>
-                        <td>Stille</td>
-                        <td></td>
-                        <td>7.–9.4.22</td>
-                        <td>EUR 60,–</td>
-                        <td>EUR 120,–</td>
-                    </tr>
-            </table>
-        </div>
-    </div>
-    <div id="stimmen" class="p-6">
-        <h2 class="text-2xl text-center text-[#8D644B] font-semibold mt-6">Stimmen</h2>
-        <h3 class="text-l text-center">Das sagen Gäste, die unser Angebot im Probebetrieb getestet haben:</h3>
-        <br>
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-            <!-- Full-width slides/quotes -->
-            <div class="mySlides">
-            <q>Ich habe mit meiner Mutter und meiner Schwester ein Yoga-Wochenende im Kloster Schwarzenfels verbracht und kann es nur weiterempfehlen. In der freien Zeit ist die Natur nicht weit – oder auch eine Eisdiele in der Stadt.</q>
-            <p class="author">Anette A. (27)</p>
-            </div>
-        
-            <div class="mySlides">
-            <q>Ich bin beruflich sehr angespannt. Zum Glück habe ich das Schweige-Angebot im Kloster Schwarzenfels entdeckt. Nur bei den gemeinsamen Mahlzeiten wird geredet, aber auch da nur das Nötigste. Das funktioniert gut, weil die Atmosphäre im Haus stimmt.</q>
-            <p class="author">Susanne S. (53)</p>
-            </div>
-        
-            <div class="mySlides">
-            <q>Ruhe erleben, versorgt werden, zu mir kommen – das sind die entscheidenden Punkte meines Aufenthalts im Kloster Schwarzenfels. Was ich keinesfalls will, das sind Gesprächskreise. Aber ich habe ja die Wahl.</q>
-            <p class="author">Bernd B. (73)</p>
-            </div>
-
-            <div class="mySlides">
-            <q>Ich habe einfach genossen, mich um nichts kümmern zu müssen, auch zu keinem Programm verpflichtet zu sein. Das Zwanglose daran war so gut.</q>
-            <p class="author">Hanna H. (66)</p>
-            </div>
-
-            <div class="mySlides">
-            <q>Meine Familie hat mir das Seminar „Arbeit mit Ton“ geschenkt. Meine Lieben dachten, als Ausgleich für meinen sehr kopfgesteuerten Alltag täte es mir gut, etwas mit den Händen zu machen. Und es hat funktioniert!</q>
-            <p class="author">Ludwig L. (48)</p>
-            </div>
-        
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        
-        <!-- Dots/bullets/indicators -->
-        <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-        </div>
-
-    </div>
-
-    <div id="ausflüge" class="p-6">
-        <h2 class="text-2xl text-center text-[#8D644B] font-semibold my-6">Ausflüge</h2>
-        <p>Passende Etappen auf dem Oberschwäbischen Pilgerweg: Der Oberschwäbische Pilgerweg verbindet herrlich gelegene Wallfahrtsorte und lässt sich in vielen verschiedenen Etappen bewältigen. Diese drei Touren sind als Rundwege angelegt. Die folgende Auflistung zeigt Ihnen alle sehenswerte Orte auf diesen drei Touren zwischen Lauchert und Bad Waldsee. Die letzte Etappe berührt das Kloster Schwarzenfels bei Ravensburg. </p>
-        <br>
-        <div class="border-l-4 border-[#8D644B] pl-6 pb-6 relative">
-            <div class="w-8 h-8 bg-[#8D644B] absolute left-[-18px] rounded-full"></div>
-            <h2 class="font-bold text-[#8D644B] pt-1">1. Etappe</h2>
+        <main id="main">
+        <div class="bg-[#9F8F84] text-white text-center p-6">
+            <h2 class="font-semibold text-xl">Atemholen in der Pandemie – Wir sind für Sie da!</h2>
             <br>
-            <p>Zwischen Lauchert und Bodensee, 153 Kilometer
-                <br><br>
-                über die Stationen Mengen, Scheer, Veringenstadt, Sigmaringen,
-                Inzigkofen, Beuron, Engelswies, Meßkirch, Heiligenberg,
-                Pfullendorf, Ostrach und Mengen
-                <br><br>
-                mit Übernachtungen in Sigmaringen und Heiligenberg
-            </p>
+            <p>Das Seminarhaus Kloster Schwarzenfels ist weiter geöffnet. 
+            Achten Sie auf unsere speziellen Bedingungen. 
+            Wir freuen uns auf Sie – gerade jetzt.
+            Bleiben Sie gesund.</p>
         </div>
-        <div class="border-l-4 border-[#8D644B] pl-6 pb-6 relative">
-            <div class="w-8 h-8 bg-[#8D644B] absolute left-[-18px] rounded-full"></div>
-            <h2 class="font-bold text-[#8D644B] pt-1">2. Etappe</h2>
-            <br>
-            <p>Zwischen Linzgau und Schussen, 126 Kilometer
-                <br><br>
-                über die Stationen Aulendorf, Altshausen, Bad Saulgau, Hohentengen, Ostrach, Königseggwald, Horgenzell, Berg, Fronreute, Wolpertswende, Bad Waldsee, Aulendorf
-                <br><br>
-                mit Übernachtungen in Ostrach und Bad Waldsee
+
+        <div class="p-6">
+            <p>Nun ist es so weit: Nach den guten Erfahrungen im Probebetrieb starten wir im Jahr 2022 mit den ersten regelmäßigen Kursen zu Gesundheit, Kreativität und Stille. Unser Motto: „Auszeit-in-Schwarzenfels“. Wer Erholung, Entspannung und Abstand vom Alltag sucht, ist uns herzlich willkommen. Wir hoffen, Sie bald auf dem Klosterareal mit seinem modernen Seminarhaus als Gäste begrüßen zu dürfen – ganz unabhängig davon, welchen Glauben oder welche Weltanschauung Sie haben. Denn Gastfreundschaft ist seit Jahrhunderten ein Merkmal des Klosterlebens. </p>
+        </div>
+
+        <div id="angebot">
+            <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-5 mt-2">Angebote</h2>
+            <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-4">Gesundheit</h3></div>
+            <div class="md:grid md:gap-4 md:grid-cols-[repeat(2,1fr)]">
+            <section>
+                <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_23.jpg);"></div>
+                <div class="p-6">
+                    <h4 class="font-bold">Hatha-Yoga</h4>
+                    <br>
+                    <p>
+                        Keine Vorkenntnisse notwendig, nur Neugierde und Achtsamkeit sind
+                        gefragt. Als Präventionsseminar von einigen Krankenkassen gefördert.
+                        <br><br>
+                        Freitag, 4. Februar bis Sonntag, 6. Februar 2022
+                        Freitag, 3. Juni bis Sonntag, 5. Juni 2022
+                        <br><br>
+                        Kursleiterin: Annegret Schippke, annegret-schippke@yahoo.de
+                        <br><br>
+                        Kursgebühr EUR 85,– Vollpension EUR 120,–
+                    </p>
+                    <br>
+                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all">Anmeldung</a>
+                </div>
+            </section>
+            <section>
+                <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_25.jpg);"></div>
+                <div class="p-6">
+                    <h4 class="font-bold">Körperarbeit</h4>
+                    <br>
+                    <p>
+                        Lassen Sie sich ganz entspannt auf verschiedene Techniken wie Feldenkrais und Achtsamkeitsbasierte Stressreduktion (MBSR) ein. 
+                        <br><br>
+                        Freitag, 11. Februar bis Sonntag, 13. Februar 2022
+                        Freitag, 6. Mai bis Sonntag, 8. Mai 2022
+                        <br><br>
+                        Kursleiter: Steffen Nagel, info@kursnagel.de
+                        <br><br>
+                        Kursgebühr EUR 95,–, Vollpension EUR 120,–
+                    </p>
+                    <br>
+                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                </div>
+            </section>
+            </div>
+            <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-4">Kreativität</h3></div>
+            <div class="md:grid md:gap-4 md:grid-cols-[repeat(2,1fr)]">
+            <section>
+                <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_14.jpg);"></div>
+                <div class="p-6">
+                    <h4 class="font-bold">Zeichnen und Malen</h4>
+                    <br>
+                    <p>
+                        Wir halten Eindrücke aus der Umgebung als Zeichnungen oder Aquarelle fest. Ich begleite Sie auf dem Weg ganz individuell. Ob Einsteiger/-innen oder Fortgeschrittene – für jeden ist etwas dabei.
+                        <br><br>
+                        Samstag, 23. April bis Sonntag, 24. April 2022
+                        Samstag, 21. Mai bis Sonntag, 22. Mai 2022
+                        <br><br>
+                        Kursleiterin: Hanne Harch, haha@t-online.de
+                        <br><br>
+                        Kursgebühr inkl. Material EUR 110,–, Vollpension EUR 85,–
+                    </p>
+                    <br>
+                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                </div>
+            </section>
+            <section>
+                <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_12.jpg);"></div>
+                <div class="p-6">
+                    <h4 class="font-bold">Arbeiten mit Ton</h4>
+                    <br>
+                    <p>
+                        Formen Sie den Werkstoff Ton zu einem persönlichen Einzelstück. Erleben Sie, was in Ihren Händen steckt – und erden Sie sich im wahrsten Sinn des Wortes.
+                        <br><br>
+                        Samstag, 5. Februar bis Sonntag, 6. Februar 2022
+                        Samstag 4. Juni bis Sonntag 5. Juni 2022
+                        <br><br>
+                        Kursleiterin: Hiltrud Kleinst, hiltrud.kleinst@gmail.de
+                        <br><br>
+                        Kursgebühr EUR 90,– Materialkosten je nach Bedarf, Vollpension EUR 85,–
+                    </p>
+                    <br>
+                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                </div>
+            </section>
+            </div>
+            <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-4">Stille</h3></div>
+            <section>
+                <div class="h-52 bg-cover bg-center" style="background-image: url(img/Bild_14.jpg);"></div>
+                <div class="p-6">
+                    <h4 class="font-bold">Schweigeseminar</h4>
+                    <br>
+                    <p>
+                        So können Sie richtig Atem holen: Sie gestalten Ihren Tag im Kloster in Schweigen, das nur zu den Mahlzeiten unterbrochen wird. Unterstützend bieten wir Atem- und Entspannungsübungen an oder laden Sie zur Meditation ein. Wir bieten wahlweise einen oder drei Schweigetag/e an.
+                        <br><br>
+                        Donnerstag, 13. Januar bis Samstag, 15. Januar 2022
+                        Donnerstag, 7. April bis Samstag, 9. April 2022
+                        <br><br>
+                        Gebühr EUR 60,–, Vollpension EUR 120,–
+                    </p>
+                    <br>
+                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                </div>
+            </section>
+        </div>
+        <div id="anmeldung">
+            <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-5 mt-2">Anmeldung</h2>
+            <form action="" class="p-6">
+                <label for="text">Kurs</label>
+                <select id="kurs" name="kurs" class="border w-full h-10 mb-4 mt-2 p-2">
+                    <option value="yoga">Hatha-Yoga</option>
+                    <option value="körperarbeit">Körperarbeit</option>
+                    <option value="zeichnen">Zeichnen und Malen</option>
+                    <option value="tonarbeit">Arbeiten mit Ton</option>
+                    <option value="schweigeseminar">Schweigeseminar</option>
+                </select>
+
+                <label for="text">Zeitraum</label>
+                <select id="zeitraum" name="zeitraum" class="border w-full h-10 mb-4 mt-2 p-2">
+                    <option value="februar">Freitag, 4. Februar 2022 bis Sonntag, 6. Februar 2022</option>
+                    <option value="juni">Freitag, 3. Juni 2022 bis Sonntag, 5. Juni 2022</option>
+                </select>
+
+                <span id="formpreis" class="text-center font-bold text-[#8D644B] block mb-5">Zum Preis von EUR 205,– <br>(d. h. Kursgebühr EUR 85,–, Vollpension EUR 120,–)</span>
+                <span class="block text-center">Ich buche dieses Seminar:</span>
+
+                <label for="vorname">Vorname*</label>
+                <input id="vorname" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+
+                <label for="nachname">Nachname*</label>
+                <input id="nachname" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+
+                <div class="flex">
+                    <div class="w-2/3 mr-4">
+                        <label for="straße">Straße*</label>
+                        <input id="straße" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                    </div>
+
+                    <div class="w-1/3">
+                        <label for="hausnr">Hausnr.*</label>
+                        <input id="hausnr" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="w-1/3 mr-4">
+                        <label for="plz">PLZ*</label>
+                        <input id="plz" type="number" required class="border w-full h-10 mb-4 mt-2 p-2">
+                    </div>
+
+                    <div class="w-2/3">
+                        <label for="ort">Ort*</label>
+                        <input id="ort" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                    </div>
+                </div>
+
+                <label for="email">Email*</label>
+                <input id="email" type="email" required class="border w-full h-10 mb-4 mt-2 p-2">
+
+                <label for="tel">Telefon</label>
+                <input id="tel" type="tel" class="border w-full h-10 mb-4 mt-2 p-2">
                 
-            </p>
-        </div>
-        <div class="border-l-4 border-[#8D644B] pl-6 pb-6 relative">
-            <div class="w-8 h-8 bg-[#8D644B] absolute left-[-18px] rounded-full"></div>
-            <h2 class="font-bold text-[#8D644B] pt-1">3. Etappe</h2>
-            <br>
-            <p>Zwischen Schussen und Allgäu, 200 Kilometer
-                <br><br>
-                über die Stationen Bald Waldsee, Bad Schussenried, Weingarten, Ravensburg, Schloss Zeil, Bad Wurzach, Bergatreute, Bad Waldsee
-                <br><br>
-                mit Übernachtungen in Ravensburg, Bad Wurzach und Bad Waldsee
-                
-            </p>
-        </div>
-        <p class="mt-8">Wer alle drei Etappen bewältigen will, lässt sich auf 480 Kilometer Wegstrecke ein. Ob sie zu Fuß oder per Rad gemacht wird, hängt ganz von Lust und Laune ab. Ebenso einladend sind Ausflüge auf einzelnen Teilstrecken. Wir beraten Sie gerne.</p>
-    </div>
+                <div class="flex">
+                    <input id="agb" type="checkbox" required class="border w-6 h-6 mb-4 mt-2 mr-2 p-2">
+                    <label for="agb" class="pt-2">Ich bin mit den AGB einverstanden.*</label>
+                </div>
+                <div class="flex">
+                    <input id="dsgvo" type="checkbox" required class="border w-6 h-6 mb-4 mt-2 mr-2 p-2">
+                    <label for="dsgvo" class="pt-2">Einwilligung zur Datenverarbeitung gemäß DSGVO*</label>
+                </div>
+                <div class="flex">
+                    <input id="newsletter" type="checkbox" class="border w-6 h-6 mb-4 mt-2 mr-2 p-2">
+                    <label for="newsletter" class="pt-2">Ich melde mich zum Newsletter an.</label>
+                </div>
 
-    <div id="kontakt" class="bg-[#8D644B] p-6 text-center text-white">
-        <p>Seminarhaus Kloster Schwarzenfels
-            <br><br>
-            Tel: 0751-123450
+                <button id="formBtn" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all" mt-4">Abschicken</button>
+                <span class="pt-2 block">(*Pflichtfelder)</span>
+            </form>
+        </div>
+        <div id="preisübersicht">
+            <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-2 mt-2">Programm- und Preisübersicht</h2>
+            <h3 class="text-l text-center font-bold text-[#8D644B]">1. Halbjahr 2022</h3>
+
+            <div class="flex overflow-auto whitespace-nowrap mt-3 min-w-full">
+                <table class="min-w-full">
+                    <tr>
+                        <td>Kursname</td>
+                        <td>Dozent-/in</td>
+                        <td>Datum</td>
+                        <td>Kursgebühr</td>
+                        <td>Vollpension</td>
+                    </tr>
+                        <tr>
+                            <td>Hatha-Yoga</td>
+                            <td>Annegret Schippke</td>
+                            <td>4.–6.2.22</td>
+                            <td>EUR 85,–</td>
+                            <td>EUR 120,–</td>
+                        </tr>
+                        <tr>
+                            <td>Hatha-Yoga</td>
+                            <td>Annegret Schippke</td>
+                            <td>3.–5.6.22</td>
+                            <td>EUR 85,–</td>
+                            <td>EUR 120,–</td>
+                        </tr>
+                        <tr>
+                            <td>Körperarbeit</td>
+                            <td>Steffen Nagel</td>
+                            <td>11.–13.2.22</td>
+                            <td>EUR 95,–</td>
+                            <td>EUR 120,–</td>
+                        </tr>
+                        <tr>
+                            <td>Körperarbeit</td>
+                            <td>Steffen Nagel</td>
+                            <td>6.–8.5.22.</td>
+                            <td>EUR 95,–</td>
+                            <td>EUR 120,–</td>
+                        </tr>
+                        <tr>
+                            <td>Zeichnen</td>
+                            <td>Hanne Harch</td>
+                            <td>23.–24.4.22</td>
+                            <td>EUR 110,–</td>
+                            <td>EUR 85,–</td>
+                        </tr>
+                        <tr>
+                            <td>Zeichnen</td>
+                            <td>Hanne Harch</td>
+                            <td>21.–22.5.22</td>
+                            <td>EUR 110,–</td>
+                            <td>EUR 85,–</td>
+                        </tr>
+                        <tr>
+                            <td>Töpfern</td>
+                            <td>Hiltrud Kleinst</td>
+                            <td>5.–6.2.22</td>
+                            <td>EUR 90,–</td>
+                            <td>EUR 85,–</td>
+                        </tr>
+                        <tr>
+                            <td>Töpfern</td>
+                            <td>Hiltrud Kleinst</td>
+                            <td>4.–5.6.22</td>
+                            <td>EUR 90,–</td>
+                            <td>EUR 85,–</td>
+                        </tr>
+                        <tr>
+                            <td>Stille</td>
+                            <td></td>
+                            <td>13.–15.1.22</td>
+                            <td>EUR 60,–</td>
+                            <td>EUR 120,–</td>
+                        </tr>
+                        <tr>
+                            <td>Stille</td>
+                            <td></td>
+                            <td>7.–9.4.22</td>
+                            <td>EUR 60,–</td>
+                            <td>EUR 120,–</td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <div id="stimmen" class="p-6">
+            <h2 class="text-2xl text-center text-[#8D644B] font-semibold mt-6">Stimmen</h2>
+            <h3 class="text-l text-center">Das sagen Gäste, die unser Angebot im Probebetrieb getestet haben:</h3>
             <br>
-            Fax: 0751-123459
-            <br><br>
-            info@auszeit-in-schwarzenfels.de
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+                <!-- Full-width slides/quotes -->
+                <div class="mySlides">
+                <q>Ich habe mit meiner Mutter und meiner Schwester ein Yoga-Wochenende im Kloster Schwarzenfels verbracht und kann es nur weiterempfehlen. In der freien Zeit ist die Natur nicht weit – oder auch eine Eisdiele in der Stadt.</q>
+                <p class="author">Anette A. (27)</p>
+                </div>
+            
+                <div class="mySlides">
+                <q>Ich bin beruflich sehr angespannt. Zum Glück habe ich das Schweige-Angebot im Kloster Schwarzenfels entdeckt. Nur bei den gemeinsamen Mahlzeiten wird geredet, aber auch da nur das Nötigste. Das funktioniert gut, weil die Atmosphäre im Haus stimmt.</q>
+                <p class="author">Susanne S. (53)</p>
+                </div>
+            
+                <div class="mySlides">
+                <q>Ruhe erleben, versorgt werden, zu mir kommen – das sind die entscheidenden Punkte meines Aufenthalts im Kloster Schwarzenfels. Was ich keinesfalls will, das sind Gesprächskreise. Aber ich habe ja die Wahl.</q>
+                <p class="author">Bernd B. (73)</p>
+                </div>
+
+                <div class="mySlides">
+                <q>Ich habe einfach genossen, mich um nichts kümmern zu müssen, auch zu keinem Programm verpflichtet zu sein. Das Zwanglose daran war so gut.</q>
+                <p class="author">Hanna H. (66)</p>
+                </div>
+
+                <div class="mySlides">
+                <q>Meine Familie hat mir das Seminar „Arbeit mit Ton“ geschenkt. Meine Lieben dachten, als Ausgleich für meinen sehr kopfgesteuerten Alltag täte es mir gut, etwas mit den Händen zu machen. Und es hat funktioniert!</q>
+                <p class="author">Ludwig L. (48)</p>
+                </div>
+            
+                <!-- Next/prev buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            
+            <!-- Dots/bullets/indicators -->
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+
+        </div>
+
+        <div id="ausflüge" class="p-6">
+            <h2 class="text-2xl text-center text-[#8D644B] font-semibold my-6">Ausflüge</h2>
+            <p>Passende Etappen auf dem Oberschwäbischen Pilgerweg: Der Oberschwäbische Pilgerweg verbindet herrlich gelegene Wallfahrtsorte und lässt sich in vielen verschiedenen Etappen bewältigen. Diese drei Touren sind als Rundwege angelegt. Die folgende Auflistung zeigt Ihnen alle sehenswerte Orte auf diesen drei Touren zwischen Lauchert und Bad Waldsee. Die letzte Etappe berührt das Kloster Schwarzenfels bei Ravensburg. </p>
             <br>
-            www.auszeit-in-schwarzenfels.de
-            <br><br>
-            Geschäftsführung: Mechthild Mager
-            <br>
-            Abteistraße 
-            <br>
-            88214 Ravensburg
-            <br><br>
-            <span class="text-xs">Amtsgericht Ravensburg, Handelsregister Nr. XXX111XXX
-            <br>
-            Finanzamt Ravensburg USt.ID: DE220111011</span>
-        </p>
-    </div>
+            <div class="border-l-4 border-[#8D644B] pl-6 pb-6 relative">
+                <div class="w-8 h-8 bg-[#8D644B] absolute left-[-18px] rounded-full"></div>
+                <h2 class="font-bold text-[#8D644B] pt-1">1. Etappe</h2>
+                <br>
+                <p>Zwischen Lauchert und Bodensee, 153 Kilometer
+                    <br><br>
+                    über die Stationen Mengen, Scheer, Veringenstadt, Sigmaringen,
+                    Inzigkofen, Beuron, Engelswies, Meßkirch, Heiligenberg,
+                    Pfullendorf, Ostrach und Mengen
+                    <br><br>
+                    mit Übernachtungen in Sigmaringen und Heiligenberg
+                </p>
+            </div>
+            <div class="border-l-4 border-[#8D644B] pl-6 pb-6 relative">
+                <div class="w-8 h-8 bg-[#8D644B] absolute left-[-18px] rounded-full"></div>
+                <h2 class="font-bold text-[#8D644B] pt-1">2. Etappe</h2>
+                <br>
+                <p>Zwischen Linzgau und Schussen, 126 Kilometer
+                    <br><br>
+                    über die Stationen Aulendorf, Altshausen, Bad Saulgau, Hohentengen, Ostrach, Königseggwald, Horgenzell, Berg, Fronreute, Wolpertswende, Bad Waldsee, Aulendorf
+                    <br><br>
+                    mit Übernachtungen in Ostrach und Bad Waldsee
+                    
+                </p>
+            </div>
+            <div class="border-l-4 border-[#8D644B] pl-6 pb-6 relative">
+                <div class="w-8 h-8 bg-[#8D644B] absolute left-[-18px] rounded-full"></div>
+                <h2 class="font-bold text-[#8D644B] pt-1">3. Etappe</h2>
+                <br>
+                <p>Zwischen Schussen und Allgäu, 200 Kilometer
+                    <br><br>
+                    über die Stationen Bald Waldsee, Bad Schussenried, Weingarten, Ravensburg, Schloss Zeil, Bad Wurzach, Bergatreute, Bad Waldsee
+                    <br><br>
+                    mit Übernachtungen in Ravensburg, Bad Wurzach und Bad Waldsee
+                    
+                </p>
+            </div>
+            <p class="mt-8">Wer alle drei Etappen bewältigen will, lässt sich auf 480 Kilometer Wegstrecke ein. Ob sie zu Fuß oder per Rad gemacht wird, hängt ganz von Lust und Laune ab. Ebenso einladend sind Ausflüge auf einzelnen Teilstrecken. Wir beraten Sie gerne.</p>
+        </div>
+        </main>
+
+        <footer id="kontakt" class="bg-[#8D644B] p-6 text-center text-white">
+            <p>Seminarhaus Kloster Schwarzenfels
+                <br><br>
+                Tel: 0751-123450
+                <br>
+                Fax: 0751-123459
+                <br><br>
+                info@auszeit-in-schwarzenfels.de
+                <br>
+                www.auszeit-in-schwarzenfels.de
+                <br><br>
+                Geschäftsführung: Mechthild Mager
+                <br>
+                Abteistraße 
+                <br>
+                88214 Ravensburg
+                <br><br>
+                <span class="text-xs">Amtsgericht Ravensburg, Handelsregister Nr. XXX111XXX
+                <br>
+                Finanzamt Ravensburg USt.ID: DE220111011</span>
+            </p>
+        </footer>
     </div>
 
     <script>
@@ -635,43 +628,44 @@
             } 
         });
 
-        // Optionen
-        const optionBtn = document.getElementById("optionBtn");
-        const optionField = document.getElementById("optionField");
-        const optionIcon = document.getElementById("optionIcon");
-
-        optionBtn.addEventListener("click", () => {
-            if (optionField.classList.contains("hidden")) {
-                optionField.classList.remove("hidden")
-                optionBtn.classList.add("bg-white");
-                optionIcon.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#8D644B]" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-                `;
-            } else {
-                optionField.classList.add("hidden")
-                optionBtn.classList.remove("bg-white");
-                optionIcon.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" id="optionIcon" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                </svg>
-                `;
-            }
-        });
-
         // Farbdarstellung
         const farbigBtn = document.getElementById("farbig");
         const grauBtn = document.getElementById("grau");
 
         grauBtn.addEventListener("click", () => {
             document.body.style.filter = "saturate(0%)";
+
+            if(document.body.style.filter = "saturate(0%)") {
+                grauBtn.classList.add("active");
+                farbigBtn.classList.remove("active");
+            }
         });
 
         farbigBtn.addEventListener("click", () => {
-            document.body.style.filter = "saturate(100%)";
+            document.body.style.filter = "saturate(100%)"; 
+
+            if(document.body.style.filter = "saturate(100%)") {
+                grauBtn.classList.remove("active");
+                farbigBtn.classList.add("active");
+            }
         });
 
+        // Textdarstellung
+        const sSize = document.getElementById("s-size");
+        const mSize = document.getElementById("m-size");
+        const lSize = document.getElementById("l-size");
+
+        sSize.addEventListener("click", () => {
+            document.documentElement.style.fontSize = '16px'
+        });
+
+        mSize.addEventListener("click", () => {
+            document.documentElement.style.fontSize = '18px'
+        });
+
+        lSize.addEventListener("click", () => {
+            document.documentElement.style.fontSize = '20px'
+        });
 
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
