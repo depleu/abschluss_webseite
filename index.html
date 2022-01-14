@@ -127,8 +127,8 @@
                 <div class="flex items-center justify-center">
                     <div class="flex items-center rounded-full border border-[#8D644B] mr-2">
                             <button id="s-size" class="active w-10 h-8 font-bold rounded-l-full">S</button>
-                            <button id="m-size" class="bg-white w-10 h-8 font-bold">M</button>
-                            <button id="l-size" class="bg-white w-10 h-8 font-bold rounded-r-full">L</button>
+                            <button id="m-size" class="w-10 h-8 font-bold">M</button>
+                            <button id="l-size" class="w-10 h-8 font-bold rounded-r-full">L</button>
 
                             <!-- <input type="range" min="16" max="24" value="16" oninput="document.documentElement.style.fontSize = this.value + 'px'"> -->
                     </div>
@@ -663,14 +663,29 @@
 
         sSize.addEventListener("click", () => {
             document.documentElement.style.fontSize = '16px'
+            if(document.documentElement.style.fontSize = '16px') {
+                sSize.classList.add("active");
+                mSize.classList.remove("active");
+                lSize.classList.remove("active");
+            }
         });
 
         mSize.addEventListener("click", () => {
             document.documentElement.style.fontSize = '18px'
+            if(document.documentElement.style.fontSize = '18px') {
+                sSize.classList.remove("active");
+                mSize.classList.add("active");
+                lSize.classList.remove("active");
+            }
         });
 
         lSize.addEventListener("click", () => {
             document.documentElement.style.fontSize = '20px'
+            if(document.documentElement.style.fontSize = '20px') {
+                sSize.classList.remove("active");
+                mSize.classList.remove("active");
+                lSize.classList.add("active");
+            }
         });
 
     </script>
