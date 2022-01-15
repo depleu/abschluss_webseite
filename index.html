@@ -112,6 +112,43 @@
             color: white;
         }
 
+        .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 150px;
+        background-color: #8D644B;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: 5px;
+        right: 115%;
+        }
+
+        .tooltip:hover .tooltiptext {
+        visibility: visible;
+        }
+
+        .tooltip .tooltiptext::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 100%; /* To the right of the tooltip */
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent #8D644B;
+        }
+
         @media only screen and (max-width: 860px) {
             nav.scrollmenu {
                 display: block;
@@ -119,24 +156,41 @@
         }
     </style>
 </head>
-<body>
-    <div class="max-w-[1200px] mx-auto">
+<body class="accent-[#8D644B]">
+    <div id="settings" class="fixed z-40 right-0 flex flex-col top-[50%] -translate-y-[50%]">
+        <button id="colorChange" class="tooltip bg-white w-12 h-12 border border-[#8D644B] border-r-0 rounded-tl-md flex justify-center items-center">
+            <span class="tooltiptext">Kontrast änden</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#8D644B]" viewBox="0 0 28.7 28.7" role="img" aria-labelledby="high-contrast-svg-title">
+                <title id="high-contrast-svg-title">
+                    Toggle High Contrast
+                </title>
+                <path d="M14.3 0C6.5 0 0 6.5 0 14.3c0 7.9 6.5 14.3 14.3 14.3 7.9 0 14.3-6.5 14.3-14.3C28.7 6.5 22.2 0 14.3 0zm0 3.6c6 0 10.8 4.8 10.8 10.8 0 6-4.8 10.8-10.8 10.8V3.6z"></path>
+            </svg>
+        </button>
+        <button id="textSize" class="tooltip w-12 h-12 bg-white border border-[#8D644B] border-r-0 border-t-0 rounded-bl-md flex justify-center items-center">
+            <span class="tooltiptext">Textgröße ändern</span>
+            <svg viewBox="0 0 24 19" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="large-font-svg-title">
+                <title id="large-font-svg-title">
+                    Toggle Large Font Size</title>
+                <path d="M10.667 2.637v15.825H8V2.637H0V0h18.667v2.637h-8zM24 9.231h-9.333v2.637H18v6.594h2.667v-6.594H24V9.231z" fill="currentColor"></path>
+                </svg>
+        </button>
+    </div>
+    <div id="container" class="max-w-[1200px] mx-auto">
         <div id="navigation" class="bg-white sticky top-0 z-20 pb-1">
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-center">
                 <img src="img/logo_kloster.png" class="w-24 p-2" alt="Kloster Logo">
-                <div class="flex items-center justify-center">
+                <!-- <div class="flex items-center justify-center">
                     <div class="flex items-center rounded-full border border-[#8D644B] mr-2">
                             <button id="s-size" class="active w-10 h-8 font-bold rounded-l-full">S</button>
                             <button id="m-size" class="w-10 h-8 font-bold">M</button>
                             <button id="l-size" class="w-10 h-8 font-bold rounded-r-full">L</button>
-
-                            <!-- <input type="range" min="16" max="24" value="16" oninput="document.documentElement.style.fontSize = this.value + 'px'"> -->
                     </div>
                     <div class="flex items-center rounded-full border border-[#8D644B]">
                             <button id="farbig" class="active w-20 h-8 font-bold rounded-l-full">Farbig</button>
                             <button id="grau" class="w-20 h-8 font-bold rounded-r-full">Grau</button>
                     </div>
-                </div>
+                </div> -->
             </div>
             <nav class="flex justify-center scrollmenu">
                 <a href="#start">Start</a>
@@ -153,7 +207,7 @@
         <header id="start" class="flex justify-center items-center my-2 scroll-mt-[150px]">
             <div class="w-full h-[30rem] block mx-auto bg-cover bg-center" style="background-image: url(./img/waldweg_ganz.jpg);">
                 <div style="background: rgba(255, 255, 255, 0.8);" class="px-10 sm:px-20 h-full py-6 flex flex-col justify-center">
-                <h1 class="text-4xl sm:text-5xl font-bold text-[#8D644B]">Durchatmen – <br> entspannen – <br> nachdenken</h1><br>
+                <h1 class="text-3xl sm:text-5xl font-bold text-[#8D644B]">Durchatmen – <br> entspannen – <br> nachdenken</h1><br>
                 <span>Seminarhaus Kloster Schwarzenfels</span>
                 </div>
             </div>
@@ -596,7 +650,7 @@
         const formBtn = document.getElementById("formBtn");
 
         formBtn.addEventListener("submit", (e) => {
-            console.log("hello");
+            alert("Dein Formular wurde erfolgreich abgeschickt");
 
             e.preventDefault()
         })
@@ -635,60 +689,18 @@
             } 
         });
 
-        // Farbdarstellung
-        const farbigBtn = document.getElementById("farbig");
-        const grauBtn = document.getElementById("grau");
+        const colorChange = document.getElementById("colorChange");
 
-        grauBtn.addEventListener("click", () => {
-            document.body.style.filter = "saturate(0%)";
-
-            if(document.body.style.filter = "saturate(0%)") {
-                grauBtn.classList.add("active");
-                farbigBtn.classList.remove("active");
-            }
+        colorChange.addEventListener("click", () => {
+            document.getElementById("container").classList.toggle("saturate-0");
+            document.getElementById("settings").classList.toggle("saturate-0");
         });
 
-        farbigBtn.addEventListener("click", () => {
-            document.body.style.filter = "saturate(100%)"; 
+        const textChange = document.getElementById("textSize");
 
-            if(document.body.style.filter = "saturate(100%)") {
-                grauBtn.classList.remove("active");
-                farbigBtn.classList.add("active");
-            }
+        textSize.addEventListener("click", () => {
+            document.documentElement.classList.toggle("text-[20px]");
         });
-
-        // Textdarstellung
-        const sSize = document.getElementById("s-size");
-        const mSize = document.getElementById("m-size");
-        const lSize = document.getElementById("l-size");
-
-        sSize.addEventListener("click", () => {
-            document.documentElement.style.fontSize = '16px'
-            if(document.documentElement.style.fontSize = '16px') {
-                sSize.classList.add("active");
-                mSize.classList.remove("active");
-                lSize.classList.remove("active");
-            }
-        });
-
-        mSize.addEventListener("click", () => {
-            document.documentElement.style.fontSize = '18px'
-            if(document.documentElement.style.fontSize = '18px') {
-                sSize.classList.remove("active");
-                mSize.classList.add("active");
-                lSize.classList.remove("active");
-            }
-        });
-
-        lSize.addEventListener("click", () => {
-            document.documentElement.style.fontSize = '20px'
-            if(document.documentElement.style.fontSize = '20px') {
-                sSize.classList.remove("active");
-                mSize.classList.remove("active");
-                lSize.classList.add("active");
-            }
-        });
-
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
 </body>
