@@ -122,7 +122,6 @@
 
         .tooltip {
         position: relative;
-        display: inline-block;
         border-bottom: 1px dotted black;
         }
 
@@ -626,9 +625,10 @@
         window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
         if (window.pageYOffset <= 0) {
-            document.getElementById("navigation").classList.remove("down");
+            document.getElementById("navigation").style.transform = "translateY(0px)";
         } else {
-            document.getElementById("navigation").classList.add("down");
+            document.getElementById("navigation").style.transform = `translateY(-${document.getElementById("nav_logo").offsetHeight}px)`;
+
         }
         prevScrollpos = currentScrollPos;
         }
