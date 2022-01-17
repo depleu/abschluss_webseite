@@ -1,3 +1,162 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.75rem;
+}
+
+nav.scrollmenu {
+  background-color: #8D644B;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+nav.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+nav.scrollmenu a:hover {
+  background-color: #9F8F84;
+}
+
+.nav_logo_animation {
+    transition: transform .25s .1s ease-in-out;
+}
+
+.down {
+    transform: translate3d(0, -130px, 0);
+}
+
+td {
+    width: 200px;
+    padding: 10px 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #D7B7A3;
+}
+
+tr:nth-child(odd) {
+    background-color: #EAD1C2;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    background: #EAD1C2;
+}
+
+/* Slides */
+.mySlides {
+    display: none;
+    padding: 80px;
+    text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #8D644B;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #D7B7A3;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #9F8F84;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+    background-color: #8D644B;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: #333;}
+
+.active {
+    color: white;
+}
+
+.tooltip {
+position: relative;
+border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 150px;
+background-color: #8D644B;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+
+/* Position the tooltip */
+position: absolute;
+z-index: 1;
+top: 5px;
+right: 115%;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+content: " ";
+position: absolute;
+top: 50%;
+left: 100%; /* To the right of the tooltip */
+margin-top: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: transparent transparent transparent #8D644B;
+}
+
+@media only screen and (max-width: 860px) {
+    nav.scrollmenu {
+        display: block;
+    }
+}
