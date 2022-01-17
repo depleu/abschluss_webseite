@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/app.css">
     <title>Seminarhaus Kloster Schwarzenfels | Durchatmen – entspannen – nachdenken</title>
 
     <style>
@@ -28,6 +28,14 @@
         
         nav.scrollmenu a:hover {
           background-color: #9F8F84;
+        }
+
+        .nav_logo_animation {
+            transition: transform .25s .1s ease-in-out;
+        }
+
+        .down {
+            transform: translate3d(0, -130px, 0);
         }
 
         td {
@@ -177,22 +185,11 @@
         </button>
     </div>
     <div id="container" class="max-w-[1200px] mx-auto">
-        <div id="navigation" class="bg-white sticky top-0 z-20 pb-1">
-            <div class="flex items-center justify-center">
-                <img src="img/logo_kloster.png" class="w-24 p-2" alt="Kloster Logo">
-                <!-- <div class="flex items-center justify-center">
-                    <div class="flex items-center rounded-full border border-[#8D644B] mr-2">
-                            <button id="s-size" class="active w-10 h-8 font-bold rounded-l-full">S</button>
-                            <button id="m-size" class="w-10 h-8 font-bold">M</button>
-                            <button id="l-size" class="w-10 h-8 font-bold rounded-r-full">L</button>
-                    </div>
-                    <div class="flex items-center rounded-full border border-[#8D644B]">
-                            <button id="farbig" class="active w-20 h-8 font-bold rounded-l-full">Farbig</button>
-                            <button id="grau" class="w-20 h-8 font-bold rounded-r-full">Grau</button>
-                    </div>
-                </div> -->
+        <div id="navigation" class="bg-white sticky top-0 z-20 pb-1 nav_logo_animation" style="transform: r;">
+            <div id="nav_logo" class="flex items-center justify-center">
+                <img src="img/logo_kloster.png" class="w-44 p-2 block" alt="Kloster Logo">
             </div>
-            <nav class="flex justify-center scrollmenu">
+            <nav id="nav_nav" class="flex justify-center scrollmenu">
                 <a href="#start">Start</a>
                 <a href="#angebot">Angebot</a>
                 <a id="btnAnmeldung" href="#anmeldung">Anmeldung</a>
@@ -205,7 +202,7 @@
         </div>
             
         <header id="start" class="flex justify-center items-center my-2 scroll-mt-[150px]">
-            <div class="w-full h-[30rem] block mx-auto bg-cover bg-center" style="background-image: url(./img/waldweg_ganz.jpg);">
+            <div class="w-full h-[30rem] block mx-auto bg-cover bg-bottom" style="background-image: url(./img/kloster.jpg);">
                 <div style="background: rgba(255, 255, 255, 0.8);" class="px-10 sm:px-20 h-full py-6 flex flex-col justify-center">
                 <h1 class="text-3xl sm:text-5xl font-bold text-[#8D644B]">Durchatmen – <br> entspannen – <br> nachdenken</h1><br>
                 <span>Seminarhaus Kloster Schwarzenfels</span>
@@ -229,7 +226,10 @@
 
         <div id="angebot" class="scroll-mt-[150px]">
             <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-5 mt-2">Angebot</h2>
-            <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-10">Gesundheit</h3></div>
+            <div class="relative">
+                <span class="block h-0.5 w-full absolute top-1/2 bg-[#8D644B]"></span>
+                <h3 class="font-bold mb-10 p-3 text-center text-[#8D644B] bg-white w-max mx-auto relative z-1">Gesundheit</h3>
+            </div>
             <div class="md:grid md:gap-10 md:grid-cols-[repeat(2,1fr)] px-10">
             <section class="shadow-lg mb-10">
                 <div class="h-52 bg-cover bg-center" style="background-image: url(img/hatha_yoga.jpg);"></div>
@@ -271,7 +271,10 @@
                 </div>
             </section>
             </div>
-            <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-10">Kreativität</h3></div>
+            <div class="relative">
+                <span class="block h-0.5 w-full absolute top-1/2 bg-[#8D644B]">
+                </span><h3 class="font-bold mb-10 p-3 text-center text-[#8D644B] bg-white w-max mx-auto relative z-1">Kreativität</h3>
+              </div>
             <div class="md:grid md:gap-10 md:grid-cols-[repeat(2,1fr)] px-10">
             <section class="shadow-lg mb-10">
                 <div class="h-52 bg-cover bg-center" style="background-image: url(img/zeichnen_und_malen.jpg);"></div>
@@ -312,7 +315,10 @@
                 </div>
             </section>
             </div>
-            <div class="bg-[#9F8F84]"><h3 class="text-center p-3 text-white font-bold mb-10">Stille</h3></div>
+            <div class="relative">
+                <span class="block h-0.5 w-full absolute top-1/2 bg-[#8D644B]">
+                </span><h3 class="font-bold mb-10 p-3 text-center text-[#8D644B] bg-white w-max mx-auto relative z-1">Stille</h3>
+              </div>
             <div class="px-10">
             <section class="md:w-[48%] shadow-lg mb-10 mx-auto">
                 <div class="h-52 bg-cover bg-center" style="background-image: url(img/schweigeseminar.jpg);"></div>
@@ -615,6 +621,21 @@
     </div>
 
     <script>
+        // Menü beim Scollen verstecken
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (window.pageYOffset <= 0) {
+            document.getElementById("navigation").classList.remove("down");
+        } else {
+            document.getElementById("navigation").classList.add("down");
+        }
+        prevScrollpos = currentScrollPos;
+        }
+
+        function menuScoll(){
+        };
+
         // Quote Slideshow
         var slideIndex = 1;
         showSlides(slideIndex);
