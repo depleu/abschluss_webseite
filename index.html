@@ -10,6 +10,9 @@
     <title>Seminarhaus Kloster Schwarzenfels | Durchatmen – entspannen – nachdenken</title>
 </head>
 <body class="accent-[#8D644B]">
+    <div id="succsess" class="hidden">
+        <span>Formular wurde erfolgreich verschickt</span>
+    </div>
     <div id="settings" class="fixed z-40 right-0 flex flex-col top-[50%] -translate-y-[50%]">
         <button id="colorChange" class="tooltip bg-white w-12 h-12 border border-[#8D644B] border-r-0 rounded-tl-md flex justify-center items-center">
             <span class="tooltiptext">Kontrast änden</span>
@@ -186,7 +189,7 @@
         </div>
         <div id="anmeldung" class="scroll-mt-[80px] max-w-[870px] mx-auto mt-10">
             <h2 class="text-2xl text-center text-[#8D644B] font-semibold mb-5 mt-2">Anmeldung</h2>
-            <form action="" class="p-6">
+            <form action="" id="form" class="p-6">
                 <label for="text">Kurs</label>
                 <select id="kurs" name="kurs" class="border w-full h-10 mb-4 mt-2 p-2">
                     <option value="yoga">Hatha-Yoga</option>
@@ -206,40 +209,40 @@
                 <span class="block text-center">Ich buche dieses Seminar:</span>
 
                 <label for="vorname">Vorname*</label>
-                <input id="vorname" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                <input id="vorname" type="text" required class="clearInput border w-full h-10 mb-4 mt-2 p-2">
 
                 <label for="nachname">Nachname*</label>
-                <input id="nachname" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                <input id="nachname" type="text" required class="clearInput border w-full h-10 mb-4 mt-2 p-2">
 
                 <div class="flex">
                     <div class="w-2/3 mr-4">
                         <label for="straße">Straße*</label>
-                        <input id="straße" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                        <input id="straße" type="text" required class="clearInput border w-full h-10 mb-4 mt-2 p-2">
                     </div>
 
                     <div class="w-1/3">
                         <label for="hausnr">Hausnr.*</label>
-                        <input id="hausnr" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                        <input id="hausnr" type="text" required class="clearInput border w-full h-10 mb-4 mt-2 p-2">
                     </div>
                 </div>
 
                 <div class="flex">
                     <div class="w-1/3 mr-4">
                         <label for="plz">PLZ*</label>
-                        <input id="plz" type="number" required class="border w-full h-10 mb-4 mt-2 p-2">
+                        <input id="plz" type="number" required class="clearInput border w-full h-10 mb-4 mt-2 p-2">
                     </div>
 
                     <div class="w-2/3">
                         <label for="ort">Ort*</label>
-                        <input id="ort" type="text" required class="border w-full h-10 mb-4 mt-2 p-2">
+                        <input id="ort" type="text" required class="clearInput border w-full h-10 mb-4 mt-2 p-2">
                     </div>
                 </div>
 
                 <label for="email">Email*</label>
-                <input id="email" type="email" required class="border w-full h-10 mb-4 mt-2 p-2">
+                <input id="email" type="email" required class="clearInput border w-full h-10 mb-4 mt-2 p-2">
 
                 <label for="tel">Telefon</label>
-                <input id="tel" type="tel" class="border w-full h-10 mb-4 mt-2 p-2">
+                <input id="tel" type="tel" class="clearInput border w-full h-10 mb-4 mt-2 p-2">
                 
                 <div class="flex">
                     <input id="agb" type="checkbox" required class="border w-6 h-6 mb-4 mt-2 mr-2 p-2">
@@ -536,13 +539,22 @@
         // Formular
         const kurs = document.getElementById("kurs");
         const zeitraum = document.getElementById("zeitraum");
+        const form = document.getElementById("form");
         const formPreis = document.getElementById("formpreis");
         const formBtn = document.getElementById("formBtn");
+        const succsess = document.getElementById("succsess");
+        const inputList = document.querySelectorAll(".clearInput");
 
-        formBtn.addEventListener("submit", (e) => {
-            alert("Dein Formular wurde erfolgreich abgeschickt");
+        form.addEventListener("submit", (e) => {
+            succsess.classList.remove('hidden');
+            succsess.classList.add('succsessful');
+            inputList.forEach(input => input.value = "");
+            setTimeout(function () {
+                succsess.classList.remove('succsessful');
+                succsess.classList.add('hidden');
+            }, 2000);
 
-            e.preventDefault()
+            e.preventDefault;
         })
         
         kurs.addEventListener("change", () => {
