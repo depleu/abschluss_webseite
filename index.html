@@ -56,7 +56,7 @@
         </header>
 
         <main id="main">
-        <div class="bg-[#9F8F84] text-white text-center p-6">
+        <div class="bg-[#333333] text-white text-center p-6">
             <h2 class="font-semibold text-xl">Atemholen in der Pandemie – Wir sind für Sie da!</h2>
             <br>
             <p class="max-w-[870px] px-6 mx-auto">Das Seminarhaus Kloster Schwarzenfels ist weiter geöffnet. 
@@ -112,7 +112,7 @@
                         Kursgebühr EUR 95,–, <br> Vollpension EUR 120,–
                     </p>
                     <br>
-                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                    <a href="#anmeldung" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
                 </div>
             </section>
             </div>
@@ -137,7 +137,7 @@
                         Kursgebühr inkl. Material EUR 110,–, <br> Vollpension EUR 85,–
                     </p>
                     <br>
-                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                    <a href="#anmeldung" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
                 </div>
             </section>
             <section class="shadow-lg mb-10">
@@ -156,7 +156,7 @@
                         Kursgebühr EUR 90,– Materialkosten je nach Bedarf, <br> Vollpension EUR 85,–
                     </p>
                     <br>
-                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                    <a href="#anmeldung" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
                 </div>
             </section>
             </div>
@@ -179,7 +179,7 @@
                         Gebühr EUR 60,–, <br> Vollpension EUR 120,–
                     </p>
                     <br>
-                    <a href="" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
+                    <a href="#anmeldung" class="bg-[#8D644B] block font-semibold p-3 text-center text-white w-full rounded-md shadow-md hover:bg-[#99745d] transition-all"">Anmeldung</a>
                 </div>
             </section>
             </div>
@@ -441,26 +441,49 @@
         </div>
         </main>
 
-        <footer id="kontakt" class="bg-[#8D644B] p-6 text-center text-white scroll-mt-[150px]">
-            <p>Seminarhaus Kloster Schwarzenfels
-                <br><br>
-                Tel: 0751-123450
+        <footer id="kontakt" class="bg-[#8D644B] p-6 text-white scroll-mt-[150px]">
+            <div class="md:grid justify-center md:gap-10 md:grid-cols-[repeat(2,1fr)] max-w-[650px] mx-auto">
+                <span class="flex justify-center md:justify-end text-center md:text-right md:text-left mb-8">
+                Seminarhaus Kloster Schwarzenfels
                 <br>
-                Fax: 0751-123459
-                <br><br>
-                <a href="mailto:info@auszeit-in-schwarzenfels.de" class="underline">info@auszeit-in-schwarzenfels.de</a>
-                <br>
-                <a href="#" class="underline">www.auszeit-in-schwarzenfels.de</a>
-                <br><br>
                 Geschäftsführung: Mechthild Mager
                 <br>
                 Abteistraße 398
                 <br>
                 88214 Ravensburg
-                <br><br>
-                <span class="text-xs">Amtsgericht Ravensburg, Handelsregister Nr. XXX111XXX
+                </span>
+
+                <div class="flex flex-col items-center md:items-start mb-8">
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <span>Tel: 0751-123450</span>
+                </div> 
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Fax: 0751-123459</span>
+                </div>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd" />
+                    </svg>
+                    <a href="mailto:info@auszeit-in-schwarzenfels.de" class="underline">info@auszeit-in-schwarzenfels.de</a>
+                </div>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd" />
+                    </svg>
+                    <a href="#" class="underline">www.auszeit-in-schwarzenfels.de</a>
+                </div>
+            </div>
+            </div>
+            <p class="text-xs text-center block">
+                Amtsgericht Ravensburg, Handelsregister Nr. XXX111XXX
                 <br>
-                Finanzamt Ravensburg USt.ID: DE220111011</span>
+                Finanzamt Ravensburg USt.ID: DE220111011
             </p>
         </footer>
     </div>
